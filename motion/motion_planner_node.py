@@ -14,6 +14,9 @@ class MotionPlannerNode(Node):
         self.create_subscription(String, '/right/force', self.right_force_callback, 10)
         self.footsteps_pub = self.create_publisher(String, '/footsteps', 10) 
         self.target_pose_pub = self.create_publisher(PoseStamped, '/target_pose', 10)
+
+        self.get_logger().info('Motion planner node has started.')
+
         # TODO: Implement footstep and kick planning
 
     def behavior_callback(self, msg):
