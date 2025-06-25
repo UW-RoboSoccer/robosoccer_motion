@@ -1,13 +1,24 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>motion</name>
-  <version>0.0.1</version>
-  <description>Motion planner node for RoboSoccer</description>
-  <maintainer email="uwrobosoccer@gmail.com">UWRS</maintainer>
+  <name>robosoccer_motion</name>
+  <version>1.0.0</version>
+  <description>Motion planning package for robosoccer humanoid robot</description>
+  <maintainer email="your_email@example.com">Your Name</maintainer>
   <license>MIT</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>robosoccer_control</depend>
+  <depend>numpy</depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
   <export>
     <build_type>ament_python</build_type>
   </export>
-  <exec_depend>rclpy</exec_depend>
-  <exec_depend>geometry_msgs</exec_depend>
-  <exec_depend>std_msgs</exec_depend>
-</package>
+</package> 

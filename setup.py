@@ -6,7 +6,7 @@ setup(
     name=package_name,
     version='0.0.1',
     packages=[package_name],
-    install_requires=['setuptools', 'rclpy', 'geometry_msgs', 'std_msgs'],
+    install_requires=['setuptools', 'rclpy', 'geometry_msgs', 'std_msgs', 'robosoccer_control', 'numpy', 'scipy'],
     data_files=[
         ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
@@ -20,6 +20,7 @@ setup(
     entry_points={
         'console_scripts': [
             'motion_planner_node = motion.motion_planner_node:main',
+            'dcm_motion_planner = motion.dcm_motion_planner:main',
         ],
     },
 )

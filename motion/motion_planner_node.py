@@ -8,6 +8,11 @@ class MotionPlannerNode(Node):
         super().__init__('motion_planner_node')
         self.create_subscription(String, '/behavior_state', self.behavior_callback, 10)
         self.create_subscription(String, '/joint_state', self.joint_callback, 10)
+
+        self.com_target_pub = self.create_publisher(PoseStamped, '/com_target', 10)
+        self.left_foot_pub = self.create_publisher(PoseStamped, '/left_foot_target', 10)
+        self.right_foot_pub = self.create_publisher(PoseStamped, '/right_foot_target', 10)
+
         self.create_subscription(String, '/imu/data', self.imu_data_callback, 10)
         self.create_subscription(String, '/imu/euler_ori', self.imu_euler_callback, 10)
         self.create_subscription(String, '/left/force', self.left_force_callback, 10)
